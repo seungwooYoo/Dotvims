@@ -69,22 +69,19 @@ map <C-n> :NERDTreeToggle<CR>
 " Vim autotag
 map <F12> :UpdateTags<CR>
 
-" Vim tagbar
-map <F8> :TagbarToggle<CR>
-
 " Syntastics
 "set statusline+=%#warningmsg#
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes':   [],'passive_filetypes': [] }
-noremap <C-w>e :SyntasticCheck<CR>
-noremap <C-w>f :SyntasticToggleMode<CR>
-
-set statusline+=%{SyntasticsStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 1
+"let g:syntastic_python_checkers = ['flake8']
+"let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes':   [],'passive_filetypes': [] }
+"noremap <C-w>e :SyntasticCheck<CR>
+"noremap <C-w>f :SyntasticToggleMode<CR>
+"
+"set statusline+=%{SyntasticsStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 0
+"let g:syntastic_check_on_wq = 1
 
 " Indent guides
 "let g:indent_guides_enable_on_vim_startup=1
@@ -97,3 +94,7 @@ let Python2Syntax = 1
 highlight Pmenu ctermfg=black ctermbg=red
 
 let vim_markdown_preview_github=1
+
+" easytags
+let g:easytags_async=1
+let g:easytags_auto_highlight=0

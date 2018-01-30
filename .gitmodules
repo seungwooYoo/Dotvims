@@ -26,3 +26,6 @@
 	path = bundle/vim-misc
 	url = https://github.com/xolox/vim-misc.git
     branch = master
+[submodule "bundle/python-syntax"]
+	path = bundle/python-syntax
+	url = https://github.com/hdima/python-syntax.git
