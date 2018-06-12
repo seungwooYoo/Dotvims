@@ -86,6 +86,9 @@ map <F12> :UpdateTags<CR>
 " Indent guides
 "let g:indent_guides_enable_on_vim_startup=1
 
+let g:indentLine_char = '|'
+let g:indentLine_enabled = 1
+
 " Python syntax
 let g:python_highlight_all = 1
 let Python2Syntax = 1 
