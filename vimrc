@@ -24,9 +24,9 @@ set title
 set hlsearch
 set incsearch
 set laststatus=2
+
 "colorscheme SlateDark 
-"
-colorscheme SlateDark 
+color dracula
 syntax enable
 syntax on
 
