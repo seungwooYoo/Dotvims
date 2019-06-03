@@ -29,6 +29,7 @@ set laststatus=2
 color dracula
 syntax enable
 syntax on
+highlight Search cterm=None ctermfg=red ctermbg=grey
 
 " Basic colouring and indexing
 set encoding=utf-8
@@ -48,7 +49,8 @@ set tags+=~/torch/pkg/image/tags
 set tags+=~/torch/extra/nn/tags
 
 " Youcompleteme
-let g:ycm_path_to_python_interpreter = '/usr/bin/python2'
+"let g:ycm_path_to_python_interpreter = '/usr/bin/python2'
+let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_use_ultisnips_completer = 1
@@ -65,6 +67,8 @@ let g:airline#extensions#tabline#enabled = 1
 " Nerdtree 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.pyc$']
+
 
 " Vim autotag
 map <F12> :UpdateTags<CR>
@@ -84,8 +88,10 @@ map <F12> :UpdateTags<CR>
 "let g:syntastic_check_on_wq = 1
 
 " Indent guides
-"let g:indent_guides_enable_on_vim_startup=1
-
+let g:indent_guides_enable_on_vim_startup=0
+let g:indentLine_color_term=239
+"let g:indentLine_bgcolor_term=0
+"let g:indentLine_bgcolor_gui='#000000'
 let g:indentLine_char = '|'
 let g:indentLine_enabled = 1
 
@@ -101,3 +107,7 @@ let vim_markdown_preview_github=1
 " easytags
 let g:easytags_async=1
 let g:easytags_auto_highlight=0
+
+" Useful
+nnoremap gp oipdb.set_trace()<ESC>
+nnoremap dt o#TODO<ESC>
