@@ -41,3 +41,6 @@
 [submodule "bundle/vim-todo-highlight"]
 	path = bundle/vim-todo-highlight
 	url = https://github.com/sakshamgupta05/vim-todo-highlight
+[submodule "bundle/python_syntax"]
+	path = bundle/python_syntax
+	url = https://github.com/vim-python/python-syntax.git
