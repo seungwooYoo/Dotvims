@@ -112,6 +112,8 @@ let g:easytags_auto_highlight=0
 nnoremap gp oipdb.set_trace()<ESC>
 nnoremap dt o#TODO<ESC>
 
+command Bd bp\|bd \#
+
 let g:todo_highlight_config = {
       \   'REVIEW': {},
       \   'NOTE': {
