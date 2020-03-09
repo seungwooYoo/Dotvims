@@ -73,6 +73,13 @@ let NERDTreeIgnore = ['\.pyc$']
 " Vim autotag
 map <F12> :UpdateTags<CR>
 
+"map <C-p> :set number relativenumber<CR>
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu   | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu | set nornu | endif
+augroup END
+
 " Syntastics
 "set statusline+=%#warningmsg#
 "let g:syntastic_python_checkers = ['flake8']
@@ -111,6 +118,9 @@ let g:easytags_auto_highlight=0
 " Useful
 nnoremap gp oipdb.set_trace()<ESC>
 nnoremap dt o#TODO<ESC>
+
+"" Useful for buffer close
+command! BW :bn|:bd#
 
 let g:todo_highlight_config = {
       \   'REVIEW': {},
