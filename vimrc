@@ -121,6 +121,7 @@ nnoremap dt o#TODO<ESC>
 
 "" Useful for buffer close
 command! BW :bn|:bd#
+""command Bd bp\|bd \#
 
 let g:todo_highlight_config = {
       \   'REVIEW': {},
