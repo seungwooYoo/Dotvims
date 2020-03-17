@@ -25,11 +25,17 @@ set hlsearch
 set incsearch
 set laststatus=2
 
-"colorscheme SlateDark 
-color dracula
+
 syntax enable
 syntax on
 highlight Search cterm=None ctermfg=red ctermbg=grey
+
+"colorscheme burnttoast256 
+"colorscheme SlateDark 
+"colorscheme dracula
+"colorscheme molokai
+colorscheme molokai_dark
+
 
 " Basic colouring and indexing
 set encoding=utf-8
@@ -107,7 +113,7 @@ let g:python_highlight_all = 1
 let Python2Syntax = 1 
 
 " if it is not working - change color file
-highlight Pmenu ctermfg=black ctermbg=red
+"highlight Pmenu ctermfg=black ctermbg=red
 
 let vim_markdown_preview_github=1
 
@@ -132,3 +138,4 @@ let g:todo_highlight_config = {
       \     'cterm_bg_color': '214'
       \   }
       \ }
+
