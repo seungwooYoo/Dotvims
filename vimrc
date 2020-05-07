@@ -129,6 +129,10 @@ nnoremap dt o#TODO<ESC>
 command! BW :bn|:bd#
 ""command Bd bp\|bd \#
 
+" Jupytext
+let jupytext_fmt = 'py'
+let jupytext_filetype_map = {'py' : 'python'}
+
 let g:todo_highlight_config = {
       \   'REVIEW': {},
       \   'NOTE': {
