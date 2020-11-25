@@ -47,3 +47,12 @@
 [submodule "bundle/jupytext.vim"]
 	path = bundle/jupytext.vim
 	url = https://github.com/goerz/jupytext.vim.git
+[submodule "bundle/vim-buffergator"]
+	path = bundle/vim-buffergator
+	url = https://github.com/jeetsukumaran/vim-buffergator.git
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
+[submodule "bundle/vim-snippets"]
+	path = bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets.git

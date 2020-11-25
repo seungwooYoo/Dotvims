@@ -47,16 +47,20 @@ if $TERM == "xterm-256color"
     set t_Co=256
 endif
 
+" For fix cursur shape in WSL bash
+if &term =~ "xterm"
+    let &t_SI = "\<Esc>[6 q"
+    let &t_SR = "\<Esc>[3 q"
+    let &t_EI = "\<Esc>[2 q"
+endif
+
 " For ctags
-set tags=./tags;/
-set tags+=~/torch/pkg/optim/tags
-set tags+=~/torch/pkg/torch/tags
-set tags+=~/torch/pkg/image/tags
-set tags+=~/torch/extra/nn/tags
+set tags=./tags;
+"let g:easytags_dynamic_files = 1
 
 " Youcompleteme
 "let g:ycm_path_to_python_interpreter = '/usr/bin/python2'
-let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
+let g:ycm_path_to_python_interpreter = '/usr/bin/python3.5'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_use_ultisnips_completer = 1
@@ -75,16 +79,17 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$']
 
+map <Leader><b> :BuffergatorToggle<CR>
 
 " Vim autotag
 map <F12> :UpdateTags<CR>
 
 "map <C-p> :set number relativenumber<CR>
-augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu   | endif
-  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu | set nornu | endif
-augroup END
+"augroup numbertoggle
+"  autocmd!
+"  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu   | endif
+"  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu | set nornu | endif
+"augroup END
 
 " Syntastics
 "set statusline+=%#warningmsg#
@@ -119,7 +124,7 @@ let vim_markdown_preview_github=1
 
 " easytags
 let g:easytags_async=1
-let g:easytags_auto_highlight=0
+"let g:easytags_auto_highlight=0
 
 " Useful
 nnoremap gp oipdb.set_trace()<ESC>
@@ -128,6 +133,13 @@ nnoremap dt o#TODO<ESC>
 "" Useful for buffer close
 command! BW :bn|:bd#
 ""command Bd bp\|bd \#
+"
+
+let g:UltiSnipsExpandTrigger="<c-l>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+let g:UltiSnipsEditSplit="vertical"
 
 " Jupytext
 let jupytext_fmt = 'py'
